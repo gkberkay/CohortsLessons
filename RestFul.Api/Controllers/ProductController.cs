@@ -61,7 +61,7 @@ namespace Restful.API.Controllers
             {
                 if (product == null)
                 {
-                    return BadRequest(new { status = 400, message = "Geçersiz ürün." });
+                    return BadRequest(new { status = 400, message = "Invalid product" });
                 }
                 ProductValidator validator = new ProductValidator();
 
@@ -74,7 +74,7 @@ namespace Restful.API.Controllers
 
                 _productService.Add(product);
 
-                return Ok(new { status = 200, message = "İşlem başarı ile gerçekleşti" });
+                return Ok(new { status = 200, message = "The transaction was completed successfully" });
             }
             catch (Exception ex)
             {
